@@ -23,7 +23,7 @@ class Queue:
             deleted = self.queue[self.front]
             print(deleted," is deleted ")
             i=0
-            while i<self.rear:
+            while i < self.rear:
                 self.queue[i] = self.queue[i+1]
                 i += 1
         self.rear -= 1

@@ -99,10 +99,25 @@ class DoublyLinkedList:
         while temp:
             if temp.data == data:
                 print(data," is Found at position ",p)
+                return
             temp = temp.next
             p = p + 1
 
         print("Element Not Found")
+
+    def display_backward(self):
+        if self.root is None:
+            print("Linked List is empty")
+            return
+        else:
+            temp = self.root
+            while temp.next:
+                temp = temp.next
+
+            while temp:
+                print(temp.data," <-> ",end = ' ')
+                temp = temp.prev
+        print("None")
 
 dll = DoublyLinkedList()
 
@@ -113,7 +128,8 @@ while True:
     print("3. Insert in between Linked List")
     print("4. Display")
     print("5. Search")
-    print("6. Exit")
+    print("6. Display Backward")
+    print("7. Exit")
 
     choice = int(input("Enter your choice: "))
     if choice == 1:
@@ -136,6 +152,9 @@ while True:
         dll.search(data)
 
     elif choice == 6:
+        dll.display_backward()
+
+    elif choice == 7:
         print("Thank you for using this program")
         break
 
