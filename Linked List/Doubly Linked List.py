@@ -19,13 +19,6 @@ class DoublyLinkedList:
             self.root = new_node
         print(data, " added at begining of Linked List")
 
-    def display(self):
-        temp = self.root
-        while temp:
-            print(temp.data, end=" <-> ")
-            temp = temp.next
-        print("None")
-
     def insert_at_back(self,data):
         new_node = Node(data)
         if self.root is None:
@@ -104,6 +97,13 @@ class DoublyLinkedList:
             p = p + 1
 
         print("Element Not Found")
+
+    def display(self):
+        temp = self.root
+        while temp:
+            print(temp.data, end=" <-> ")
+            temp = temp.next
+        print("None")
 
     def display_backward(self):
         if self.root is None:
