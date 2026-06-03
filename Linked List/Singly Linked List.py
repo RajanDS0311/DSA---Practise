@@ -7,28 +7,6 @@ class LinkedList:
     def __init__(self):
         self.root = None
 
-    def display(self):
-        temp = self.root
-
-        while temp is not None:
-            print(temp.data, end=" -> ")
-            temp = temp.next
-
-        print("None")
-
-    def sort(self):
-            temp = self.root
-            while temp is not None:
-                temp1= temp.next
-                while temp1 is not None:
-                    if temp.data > temp1.data:
-                        k = temp.data
-                        temp.data = temp1.data
-                        temp1.data = k
-                    temp1= temp1.next
-                temp = temp.next
-            self.display()
-
     def insert_on_front(self,data):
         new_node = Node(data)
 
@@ -110,6 +88,28 @@ class LinkedList:
             temp = temp.next
             p += 1
         print("Element Not Found")
+
+    def display(self):
+        temp = self.root
+
+        while temp is not None:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+
+        print("None")
+
+    def sort(self):
+        temp = self.root
+        while temp is not None:
+            temp1 = temp.next
+            while temp1 is not None:
+                if temp.data > temp1.data:
+                    k = temp.data
+                    temp.data = temp1.data
+                    temp1.data = k
+                temp1 = temp1.next
+            temp = temp.next
+        self.display()
 
 sll = LinkedList()
 while True:

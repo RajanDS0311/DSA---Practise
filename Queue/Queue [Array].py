@@ -26,7 +26,7 @@ class Queue:
             while i < self.rear:
                 self.queue[i] = self.queue[i+1]
                 i += 1
-        self.rear -= 1
+            self.rear -= 1
 
 
     def display(self):
